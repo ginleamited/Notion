@@ -56,3 +56,5 @@ control + r
 %s/yourtext/replacetext/g (+c)
 //to tab in vim
 control + n
+
+salut
