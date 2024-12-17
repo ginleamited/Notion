@@ -77,3 +77,5 @@ control + n
 
 // to add Cclean
 alias cclean="ncdu ~"
+
+https://github.com/pjtunstall/push-swap?tab=readme-ov-file#3-research
