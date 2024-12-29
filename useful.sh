@@ -79,3 +79,5 @@ control + n
 alias cclean="ncdu ~"
 
 -ggdb -fsanitize=adreess
+
+
