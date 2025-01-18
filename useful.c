@@ -109,10 +109,35 @@ gcc -fsanitize=address,undefined -g -o program program.c
 ./program
 
 //! VALGRIND
+
+//* Normal report
 gcc -g -o my_program my_program.c
 valgrind ./my_program
+//* Full report
+gcc -g -o my_program my_program.c
+valgrind --leak-check=full ./my_program
+//* Uninitialized Memory
+gcc -g -o uninit uninit.c
+valgrind ./uninit
+//* Valgrind Options
+valgrind ./program									Basic memory check
+valgrind --leak-check=full ./program				Detect memory leaks
+valgrind --track-origins=yes ./program				Show where uninitialized memory was allocated
+valgrind --show-leak-kinds=all ./program			Show all types of memory leaks
+valgrind --log-file=valgrind_output.txt ./program	Save output to a file
+
+//! Comparison
+
+Feature							Valgrind		AddressSanitizer
+Detects memory leaks			✅ Yes			✅ Yes
+Detects invalid memory access	✅ Yes			✅ Yes
+Detects uninitialized variables	✅ Yes			❌ No
+Performance overhead			High			 Low
+Works on optimized code			❌ No			✅ Yes
+// Use AddressSanitizer for performance, but Valgrind for more detailed analysis.
 
 //! PythonTutor
+
 cc -Wall -Wextra -Werror -g filename.c
 lldb a.out
 b function name or main
