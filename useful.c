@@ -147,3 +147,12 @@ exit
 s next step in the program
 n next line in the program
 tab + esc exit in the program
+
+//! Mac Adress
+
+sudo apt install net-tools
+ifconfig
+sudo ifconfig enp0s1 down
+sudo ifconfig enp0s1 hw ether 00:23:34:33:44
+sudo ifconfig enp0s1 up
+ifconfig
