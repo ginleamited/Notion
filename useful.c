@@ -156,3 +156,7 @@ sudo ifconfig enp0s1 down
 sudo ifconfig enp0s1 hw ether 00:23:34:33:44
 sudo ifconfig enp0s1 up
 ifconfig
+
+//! GRADEME
+
+bash -c "$(curl https://grademe.fr)"
